@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 23:22:45 by papa              #+#    #+#             */
-/*   Updated: 2022/11/15 23:21:11 by arimar           ###   ########.fr       */
+/*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
+/*   Updated: 2022/11/16 23:56:23 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	struct nodo	*pila;
+	Nodo* pila;
 
-	pila = crearNodo(15);
+	pila = CrearNodo(15);
 	push(2, &pila);
 	push(3, &pila);
 	imprimirpila(&pila);

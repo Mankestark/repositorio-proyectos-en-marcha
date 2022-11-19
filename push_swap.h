@@ -6,7 +6,7 @@
 /*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/15 23:20:43 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/16 23:29:22 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 #define PUSH_SWAP_H
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <limits.h>
-#include "libft.h"
-
-//declaracion de la pila
-struct			nodo
+#include "libft/libft.h"
+//Definicion del nodo
+typedef struct nodo 
 {
-	int			dato;
-	struct nodo	*siguiente;
-};
-//creacion de un nuevo nodo que a su vez crea la pila(primer nodo)
-struct nodo	*crearNodo(int dato)
+	int numb;
+	struct nodo* siguiente;
+}Nodo;
+//Inicializacion de la pila
+typedef struct pila
 {
-	struct nodo	*nuevo;
-
-	nuevo = malloc(sizeof(struct nodo));
-	nuevo->dato = dato;
-	nuevo->siguiente = NULL;
-	return (nuevo);
-}
-int	pop(struct nodo **pila);
-void	imprimirpila(struct nodo **pila);
-void	push(int dato, struct nodo **pila);
-
-
+	Nodo* cima;
+}PilaA;
+//Crear un nodo
+Nodo* CrearNodo(int numb);
+//Destruir un nodo
+void DestruirNodo(Nodo* nodo);
+//Introducir un nodo
+void push(PilaA* pila, int numb);
+//Quitar un nodo
+void pop(PilaA* pila);
+//Ver que nodo esta en la cima
+int Cima(PilaA* pila);
+//imprimir pila
+void imprimirpila(Nodo* pila);
 #endif
