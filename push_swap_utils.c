@@ -3,56 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/16 23:55:59 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/20 03:28:06 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlibl.h>
+#include <stdlib.h>
 
-Nodo* CrearNodo(int numb)
+Nodo	*CrearNodo(int numb)
 {
-	Nodo* nodo = malloc(sizeof(Nodo));
+	Nodo	*nodo;
+
+	nodo = malloc(sizeof(Nodo));
 	nodo->numb = numb;
 	nodo->siguiente = NULL;
-	return nodo;	
+	return (nodo);
 }
 
-void DestruirNodo(Nodo* nodo)
+void	DestruirNodo(Nodo *nodo)
 {
 	nodo->siguiente = NULL;
 	free(nodo);
 }
 
-void push(PilaA* pila, int numb)
+void	push(int numb, Nodo **pila)
 {
-	Nodo* nodo = CrearNodo(numb);
-	nodo->siguiente = pila->cima;
-	pila->cima = nodo;
+	Nodo	*nodo;
+
+	nodo = CrearNodo(numb);
+	nodo->siguiente = *pila;
+	*pila = nodo;
 }
-void pop(PilaA* pila)
+int	pop(Nodo** pila)
 {
-	if (pila->cima == NULL)
+		Nodo* eliminar;
+		int data;
+
+	/*if (*pila == NULL)
 		printf("La pila esta vacia\n");
-	else 
-		Nodo* eliminar = pila->cima;
-		pila->cima = pila->cima->siguiente;
-		DestruirNodo(eliminar);
-}
-int Cima(PilaA* pila)
-{
-	if (pila->cima == NULL)
-		return NULL;
 	else
-		return pila->cima->numb;
+	{
+		eliminar = *pila;
+		data = eliminar->data;
+		*pila = (*pila)->siguiente;
+		DestruirNodo(eliminar);
+	}*/
+	return (data);
 }
-void imprimirpila(Nodo **pila)
+int	Cima(Nodo **pila)
 {
-	Nodo* temp;
-	
+	if (*pila == NULL)
+		return (0);
+	else
+		return ((*pila)->numb);
+}
+void	imprimirpila(Nodo **pila)
+{
+	Nodo	*temp;
+
 	temp = *pila;
 	while (temp)
 	{

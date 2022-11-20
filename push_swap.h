@@ -3,39 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/16 23:29:22 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/20 03:17:03 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-#include <stdio.h>
-#include "libft/libft.h"
+# include "libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+
 //Definicion del nodo
 typedef struct nodo 
 {
 	int numb;
 	struct nodo* siguiente;
 }Nodo;
-//Inicializacion de la pila
-typedef struct pila
-{
-	Nodo* cima;
-}PilaA;
+
 //Crear un nodo
 Nodo* CrearNodo(int numb);
 //Destruir un nodo
 void DestruirNodo(Nodo* nodo);
 //Introducir un nodo
-void push(PilaA* pila, int numb);
+void push(int numb,Nodo** pila);
 //Quitar un nodo
-void pop(PilaA* pila);
+int pop(Nodo** pila);
 //Ver que nodo esta en la cima
-int Cima(PilaA* pila);
+int Cima(Nodo** pila);
 //imprimir pila
-void imprimirpila(Nodo* pila);
+void imprimirpila(Nodo** pila);
+
 #endif

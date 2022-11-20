@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/16 23:56:23 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/20 03:27:44 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	main(void)
 {
-	Nodo* pila;
+	Nodo* pilaA;
 
-	pila = CrearNodo(15);
-	push(2, &pila);
-	push(3, &pila);
-	imprimirpila(&pila);
+	pilaA = CrearNodo(15);
+	push(2,&pilaA);
+	
+	imprimirpila(&pilaA);
+	printf("Vamos a quitar el elemento %d\n", Cima(&pilaA));
 	return (0);
 }
