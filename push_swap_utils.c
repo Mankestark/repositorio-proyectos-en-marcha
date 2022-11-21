@@ -6,7 +6,7 @@
 /*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/20 03:28:06 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/21 05:56:41 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ Nodo	*CrearNodo(int numb)
 	return (nodo);
 }
 
-void	DestruirNodo(Nodo *nodo)
-{
-	nodo->siguiente = NULL;
-	free(nodo);
-}
-
 void	push(int numb, Nodo **pila)
 {
 	Nodo	*nodo;
@@ -37,22 +31,23 @@ void	push(int numb, Nodo **pila)
 	nodo->siguiente = *pila;
 	*pila = nodo;
 }
-int	pop(Nodo** pila)
+int	pop(Nodo **pila)
 {
 		Nodo* eliminar;
 		int data;
 
-	/*if (*pila == NULL)
+	if (*pila == NULL)
 		printf("La pila esta vacia\n");
 	else
 	{
 		eliminar = *pila;
-		data = eliminar->data;
+		data = eliminar->numb;
 		*pila = (*pila)->siguiente;
-		DestruirNodo(eliminar);
-	}*/
+		free(eliminar);
+	}
 	return (data);
 }
+
 int	Cima(Nodo **pila)
 {
 	if (*pila == NULL)
