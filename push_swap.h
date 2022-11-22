@@ -6,7 +6,7 @@
 /*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/21 05:56:54 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/21 19:36:22 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int pop(Nodo** pila);
 int Cima(Nodo** pila);
 //imprimir pila
 void imprimirpila(Nodo** pila);
+//pusheo de los argumentos
+Nodo* pusheo(int argc, char **argv);
 
 #endif
