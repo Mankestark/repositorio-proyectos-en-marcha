@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:45 by papa              #+#    #+#             */
-/*   Updated: 2022/11/21 19:41:34 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/22 23:01:20 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ Nodo   *pusheo(int argc, char **argv)
 }
 Nodo *pilavacia(void)
 {
-    
+    Nodo *pila;
+	if(!(pila = malloc(sizeof(Nodo))))
+		return(NULL);
+	pila->siguiente = NULL;
+	return (pila);	
 }

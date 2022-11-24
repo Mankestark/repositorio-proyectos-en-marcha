@@ -6,7 +6,7 @@
 /*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/21 19:36:22 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/24 05:37:54 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,11 @@ int Cima(Nodo** pila);
 void imprimirpila(Nodo** pila);
 //pusheo de los argumentos
 Nodo* pusheo(int argc, char **argv);
+//crear pila vacia
+Nodo *pilavacia(void);
+//comprobacion repetido
+int check_repetido(Nodo** pila);
+//comprobacion ordenado
+int check_ordenado(Nodo** pilaA, Nodo** pilaB);
 
 #endif
