@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/11/24 05:37:54 by papa             ###   ########.fr       */
-=======
-/*   Updated: 2022/11/22 22:52:57 by arimar           ###   ########.fr       */
->>>>>>> ec0356b8b57ac7b7b3bf986cdca997489c6068ed
+/*   Updated: 2022/11/24 23:31:59 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +39,11 @@ void imprimirpila(Nodo** pila);
 Nodo* pusheo(int argc, char **argv);
 //crear pila vacia
 Nodo *pilavacia(void);
-<<<<<<< HEAD
 //comprobacion repetido
 int check_repetido(Nodo** pila);
 //comprobacion ordenado
-int check_ordenado(Nodo** pilaA, Nodo** pilaB);
-=======
->>>>>>> ec0356b8b57ac7b7b3bf986cdca997489c6068ed
+int check_ordenado(Nodo** pilaA);
+//Comprobacion de entero
+int check_integer(Nodo **pila);
 
 #endif

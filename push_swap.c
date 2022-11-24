@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/22 22:58:34 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/24 23:33:40 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 int	main(int argc, char **argv)
 {
-	Nodo* pilaA;
-	Nodo* pilaB;
-	
-	if (argc < 2)
-		printf("Numero de argumentos incorrectos\n");
-	else	
-		pilaA = pusheo(argc, argv);
+	Nodo	*pilaA;
+	//Nodo	*pilaB;
 
-	imprimirpila(&pilaA);
-	pilaB = pilavacia();
-	push(pop(&pilaA), &pilaB);
-	printf("\n");
-	imprimirpila(&pilaB);
-	
+	//pilaB = NULL;
+	if (argc == 1)
+		return (0);
+	pilaA = pusheo(argc, argv);
+	if (check_ordenado(&pilaA))
+		printf("la pila esta ordenada\n");
+	if (check_repetido(&pilaA))
+		printf("Hay digitos repetidos\n");
+	if (check_integer(&pilaA))
+		printf("Obligatorio un entero\n");
 	return (0);
 }
