@@ -6,7 +6,7 @@
 /*   By: mariza <mariza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 19:22:35 by mariza            #+#    #+#             */
-/*   Updated: 2022/05/24 20:02:03 by mariza           ###   ########.fr       */
+/*   Updated: 2022/11/12 18:12:05 by mariza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # include <string.h>
 # include <unistd.h>
 
@@ -53,5 +54,12 @@ char			*ft_itoa(int n);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
+void			ft_putcharacter_length(char character, int *length);
+void			ft_string(char *args, int *length);
+void			ft_number(int number, int *length);
+void			ft_hexadecimal(unsigned int x, int *length, char x_or_x);
+void			ft_unsigned_int(unsigned int u, int *length);
+void			ft_pointer(size_t pointer, int *length);
+int				ft_printf(const char *string, ...);
 
 #endif

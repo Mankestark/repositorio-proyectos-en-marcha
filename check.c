@@ -6,12 +6,12 @@
 /*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:50 by papa              #+#    #+#             */
-/*   Updated: 2022/11/27 17:05:49 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/27 18:04:41 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
 
 static int	check_repetido(char **argv)
 {
@@ -28,7 +28,7 @@ static int	check_repetido(char **argv)
 				return (1);
 			j++;
 		}
-		i++
+		i++;
 	}
 	return (0);
 }
@@ -54,16 +54,30 @@ int	check_ok(char **argv)
 	return (1);
 }
 
-int	check_arg_digit(char *argv)
+static int	check_arg_digit(char *argv)
 {
 	int i;
 
 	i = 0;
 	if (check_sign(argv[i]) && argv[i+1])
-	i++;
+		i++;
 	while (argv[i] && check_digit(argv[i]))
 		i++;
 	if (argv[i] && !check_digit(argv[i]))
 		return(0);
+	return (1);
+}
+
+static int	check_zero(char *argv)
+{
+	int i;
+
+	i = 0;
+	if (check_sign(argv[i]))
+		i++;
+	while (argv[i] && argv[i] == '0')
+		i++;
+	if (argv[i])
+		return (0);
 	return (1);
 }
