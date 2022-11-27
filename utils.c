@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/27 10:31:44 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/27 18:36:07 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,19 @@ void	imprimirpila(Nodo **pila)
 		printf("%d\n", temp->numb);
 		temp = temp->siguiente;
 	}
+}
+
+int taman_pila(Nodo **pila)
+{
+	int i;
+
+	i = 0;
+	if (!(*pila))
+		return (0);
+	while (*pila)
+	{
+		*pila = (*pila) -> siguiente;
+		i++;
+	}
+	return(i);
 }
