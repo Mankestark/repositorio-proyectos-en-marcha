@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 10:11:53 by papa              #+#    #+#             */
-/*   Updated: 2022/11/27 10:51:20 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/27 16:23:18 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int check_sign(char c)
     return(c == '+' || c == '-');
 }
 
-int check_diff_sign(const char *c1, const char *c2)
+int check_arg_comp(const char *c1, const char *c2)
 {
     int i;
     int j;

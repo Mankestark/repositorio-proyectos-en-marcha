@@ -3,67 +3,67 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:50 by papa              #+#    #+#             */
-/*   Updated: 2022/11/27 10:30:37 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/27 17:05:49 by arimar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-static int	check_repetido(Nodo **pila)
+static int	check_repetido(char **argv)
 {
-	Nodo	*temp;
-	Nodo	*original;
 	int		i;
-
-	temp = *pila;
-	while (temp)
+	int		j;
+	
+	i = 1;
+	while (argv[i])
 	{
-		i = 0;
-		original = temp;
-		while (original)
+		j = 0;
+		while (argv[j])
 		{
-			if (original->numb == temp->numb)
-				i++;
-			if (i >= 2)
+			if (j != i && check_arg_comp(argv[i], argv[j]) == 0)
 				return (1);
-			original = original->siguiente;
+			j++;
 		}
-		temp = temp->siguiente;
+		i++
 	}
 	return (0);
 }
 
-int	check_ok(Nodo **pilaA)
+int	check_ok(char **argv)
 {
-	Nodo	*original;
+	int	i;
+	int j;
 
-	original = *pilaA;
-	while ((*pilaA)->siguiente)
+	j = 0;
+	i = 1;
+	while (argv[i])
 	{
-		if ((*pilaA)->numb > (*pilaA)->siguiente->numb
-			|| original->numb > (*pilaA)->numb)
+		if (!check_arg_digit(argv[i]))
 			return (0);
-		original = (*pilaA)->siguiente;
-		*pilaA = (*pilaA)->siguiente;
+		j += check_zero(argv[i]);
+		i++;				
 	}
+	if (j > 1)
+		return (0);
+	if (check_repetido(argv))
+		return (0);
 	return (1);
 }
-int	check_integer(Nodo **pila)
-{
-	Nodo	*temp;
 
-	temp = *pila;
-	while (temp->siguiente)
-	{
-		if (temp->numb >= 48 && temp->numb <= 57)
-			return (1);
-		temp = (*pila)->siguiente;
-		*pila = (*pila)->siguiente;
-	}
-	return (0);
+int	check_arg_digit(char *argv)
+{
+	int i;
+
+	i = 0;
+	if (check_sign(argv[i]) && argv[i+1])
+	i++;
+	while (argv[i] && check_digit(argv[i]))
+		i++;
+	if (argv[i] && !check_digit(argv[i]))
+		return(0);
+	return (1);
 }
-int	check_digit(void)
