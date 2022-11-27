@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_push.c                                   :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:45 by papa              #+#    #+#             */
-/*   Updated: 2022/11/22 23:01:20 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/27 10:56:41 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
+
 
 Nodo   *pusheo(int argc, char **argv)
 {
 	Nodo* pila;
     int i;
 
-	pila = CrearNodo(atoi(argv[1]));
+	pila = CrearNodo(ft_atoi(argv[1]));
 	i = 2;
 	while (i < argc)
 	{
-        push(atoi(argv[i]), &pila);
+        push(ft_atoi(argv[i]), &pila);
         i++;
 	}
     return (pila);

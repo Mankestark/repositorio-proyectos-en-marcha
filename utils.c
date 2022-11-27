@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/21 05:56:41 by papa             ###   ########.fr       */
+/*   Updated: 2022/11/27 10:31:44 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include "push_swap.h"
-#include <stdlib.h>
 
 Nodo	*CrearNodo(int numb)
 {
@@ -33,8 +33,8 @@ void	push(int numb, Nodo **pila)
 }
 int	pop(Nodo **pila)
 {
-		Nodo* eliminar;
-		int data;
+	Nodo	*eliminar;
+	int		data;
 
 	if (*pila == NULL)
 		printf("La pila esta vacia\n");
