@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/27 18:36:07 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/29 06:09:12 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,15 @@ int taman_pila(Nodo **pila)
 		i++;
 	}
 	return(i);
+}
+
+int pila_ordenada(Nodo **pila)
+{
+	while ((*pila) -> siguiente != NULL)
+	{
+		if ((*pila)->numb > (*pila)->siguiente->numb)
+			return (0);
+		*pila = (*pila)->siguiente;
+	}
+	return (1);
 }

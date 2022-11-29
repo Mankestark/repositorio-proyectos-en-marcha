@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/27 18:36:27 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/29 05:42:00 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	}		
 	pilaB = NULL;
 	pilaA = pusheo(argc, argv);
-	pila_lenght = taman_pila(&pilaA);
+	//pila_lenght = taman_pila(&pilaA);
 	
 	
 	return (0);
