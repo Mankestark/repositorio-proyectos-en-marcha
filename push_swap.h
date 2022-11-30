@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/27 18:31:35 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/30 06:35:12 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int check_ok(char **argv);
 static int check_zero(char *argv);
 //comprueba que el argumento es un numero
 static int check_arg_digit(char *argv);
+//comprueba que la pilaA esta ordenada
+int che_sorted (Nodo *pila);
 
 //	CHECK_UTILS
 //comprobación si es un digito
@@ -61,6 +63,10 @@ int check_arg_comp(const char *c1, const char *c2);
 
 //mide el tamaño de la pila
 int taman_pila(Nodo **pila);
+
+//SORT
+//establece que tipo de ordenacion dependiendo de la cantidad de argumentos
+static void push_swap(Nodo **pilaA, Nodo **pilaB, int taman_pila);
 
 
 

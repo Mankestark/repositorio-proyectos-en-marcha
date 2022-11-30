@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arimar <arimar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:50 by papa              #+#    #+#             */
-/*   Updated: 2022/11/27 18:04:41 by arimar           ###   ########.fr       */
+/*   Updated: 2022/11/30 06:15:08 by papa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,16 @@ static int	check_zero(char *argv)
 		i++;
 	if (argv[i])
 		return (0);
+	return (1);
+}
+
+int check_sorted (Nodo *pila)
+{
+	while (pila->siguiente != NULL)
+	{
+		if (pila -> numb > pila -> siguiente -> numb)
+			return (0);
+		pila = pila -> siguiente;
+	}
 	return (1);
 }
