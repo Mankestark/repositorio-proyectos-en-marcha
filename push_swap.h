@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/30 06:35:12 by papa             ###   ########.fr       */
+/*   Updated: 2022/12/01 10:55:26 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 
 //Definicion del nodo
 typedef struct nodo 
 {
 	int numb;
+	int	index;
 	struct nodo* siguiente;
 }Nodo;
 
@@ -64,10 +66,20 @@ int check_arg_comp(const char *c1, const char *c2);
 //mide el tamaño de la pila
 int taman_pila(Nodo **pila);
 
-//SORT
+//INIT_SORT
 //establece que tipo de ordenacion dependiendo de la cantidad de argumentos
 static void push_swap(Nodo **pilaA, Nodo **pilaB, int taman_pila);
+//hace intercambio de nodos
+static void swap(Nodo *pila);
 
+void sa(Nodo **pilaA);
+//intercambia los dos primeros nodos de la pilaB
+void sb(Nodo **pilaB);
+//intercambia los dos primeros nodos de la pila A y B a la vez
+
+//UTILS
+//inicia el indice la pila
+void init_index(Nodo *pilaA, int pila_lenght);
 
 
 #endif

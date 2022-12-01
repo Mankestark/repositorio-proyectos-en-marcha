@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: papa <papa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/11/29 06:09:12 by papa             ###   ########.fr       */
+/*   Updated: 2022/12/01 10:53:57 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,32 @@ int pila_ordenada(Nodo **pila)
 		*pila = (*pila)->siguiente;
 	}
 	return (1);
+}
+
+void init_index(Nodo *pilaA, int pila_lenght)
+{
+	Nodo	*i;
+	Nodo	*j;
+	int	k;
+
+	while(--pila_lenght > 0)
+	{
+		i = pilaA;
+		k = INT_MIN;
+		j = NULL;
+		while(i)
+		{
+			if (i->k == INT_MIN && i->index == 0)
+				i->index = 1;
+			if (i->k > k && i->index == 0)
+			{
+				k = i->k;
+				k = i;
+				i = pilaA;
+			}
+			else (i = i->siguiente;
+		}
+		if (k != NULL);
+			k->index = pila_lenght;
+	}
 }
