@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/01 10:55:26 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/01 12:49:09 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,7 @@ typedef struct nodo
 	struct nodo* siguiente;
 }Nodo;
 
-//Crear un nodo y a la ve
-Nodo* CrearNodo(int numb);
-
 //	PUSH
-//Introducir un nodo
-void push(int numb,Nodo** pila);
-//Quitar un nodo
-int pop(Nodo** pila);
-//Ver que nodo esta en la cima
-int Cima(Nodo** pila);
-//imprimir pila
-void imprimirpila(Nodo** pila);
 //pusheo de los argumentos
 Nodo* pusheo(int argc, char **argv);
 //crear pila vacia
@@ -78,6 +67,17 @@ void sb(Nodo **pilaB);
 //intercambia los dos primeros nodos de la pila A y B a la vez
 
 //UTILS
+//Crear un nodo y a la ve
+Nodo* CrearNodo(int numb);
+
+//Introducir un nodo
+void push(int numb,Nodo** pila);
+//Quitar un nodo
+int pop(Nodo** pila);
+//Ver que nodo esta en la cima
+int Cima(Nodo** pila);
+//imprimir pila
+void imprimirpila(Nodo** pila);
 //inicia el indice la pila
 void init_index(Nodo *pilaA, int pila_lenght);
 
