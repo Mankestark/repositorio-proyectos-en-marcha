@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/01 12:49:09 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/02 07:51:19 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int Cima(Nodo** pila);
 void imprimirpila(Nodo** pila);
 //inicia el indice la pila
 void init_index(Nodo *pilaA, int pila_lenght);
-
+//devuelve el ultimo nodo
+Nodo ulimo_nodo(Nodo *pila);
 
 #endif
