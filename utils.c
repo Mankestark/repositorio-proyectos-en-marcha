@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/02 07:50:18 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/02 11:21:08 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,9 +121,16 @@ void init_index(Nodo *pilaA, int pila_lenght)
 	}
 }
 
-Nodo ultimo_nodo(Nodo *pila);
+Nodo *ultimo_nodo(Nodo *pila)
 {
 	while(pila && pila->siguiente != NULL)
 		pila = pila->siguiente;
 	return(pila);
+}
+
+Nodo *penultimo_nodo(Nodo *pila)
+{
+	while (pila && pila->siguiente && pila->siguiente->siguiente != NULL)
+		pila = pila->siguiente;
+	retrun (pila);
 }

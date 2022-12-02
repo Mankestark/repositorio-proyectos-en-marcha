@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/02 07:51:19 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/02 11:46:59 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,52 @@ void imprimirpila(Nodo** pila);
 //inicia el indice la pila
 void init_index(Nodo *pilaA, int pila_lenght);
 //devuelve el ultimo nodo
-Nodo ulimo_nodo(Nodo *pila);
+Nodo *ulimo_nodo(Nodo *pila);
+//devuelve el penultimo nodo
+Nodo *peultimo_nodo(Nodo *pila);
+
+//MOVIMIENTOS
+//hace intercambio
+static void swap(Nodo *pila);
+//hace intercambio en pilaA
+void sa(Nodo **pilaA);
+//hace intercambio en pilaB
+void sb(Nodo **pilaB);
+//hace intercambio de las dos
+void ss(Nodo **pilaA, Nodo **pilaB);
+//pushea de una pila en otra
+static void  push_pila(Nodo **init, Nodo **dest);
+//pushea de la pilaA a la pilaB
+void pa(Nodo **pilaA, Nodo **pilaB);
+//pushea de la pilaB a la pilaA
+void pb(Nodo **pilaA, Nodo **pilaB);
+//pasa el primer elemento al ultimo
+static void rotate_pila(Nodo **pila);
+//hace rotate en la pilaA
+void ra(Nodo **pilaA);
+//hace rotate en la pilaB
+void rb(Nodo **pilaB);
+//hace rotate en las dos pilas a la vez
+void rr(Nodo **pilaA, Nodo **pilaB);
+//pasa el ultimo elemento al primero
+static void rev_rotate(Nodo**pila);
+//hace rev_rotate en pilaA
+void rra(Nodo **pilaA);
+//hace rev_rotate en la pilaB
+void rrb(Nodo **pilaB);
+//hace rev_rotate en las dos pilas a la vez
+void rrr(Nodo **pilaA, Nodo **pilaB);
+
+
+
+
+
+
+
+
+
+
+
+
 
 #endif

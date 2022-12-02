@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 06:09:54 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/02 07:56:34 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/02 11:45:10 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,36 @@ void rr(Nodo **pilaA, Nodo **pilaB)
     rotate_pila(pilaA);
     rotate_pila(pilaB);
     ft_printf("rr\n");
+}
+
+static void rev_rotate(Nodo**pila)
+{
+    Nodo    *temp;
+    Nodo    *ultimo;
+    Nodo    *penultimo;
+
+    ultimo = ultimo_nodo(*pila);
+    penultimo = penultimo_nodo(*pila);
+    temp = *pila;
+    (*pila)->siguiente = temp;
+    penultimo->siguiente = NULL;
+}
+
+void rra(Nodo **pilaA)
+{
+    rev_rotate(pilaA);
+    ft_printf("rra\n");
+}
+
+void rrb(Nodo *pilaB)
+{
+    rev_rotate(pilaB);
+    ft_printf("rrb"\n);
+}
+
+void rrr(Nodo **pilaA, Nodo **pilaB)
+{
+    rev_rotate(pilaA);
+    rev_rotate(pilaB);
+    ft_printf("rrr\n");
 }
