@@ -6,58 +6,35 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/02 11:21:08 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/02 20:00:37 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-Nodo	*CrearNodo(int numb)
+t_pila	*creart_pila(int numb)
 {
-	Nodo	*nodo;
+	t_pila	*t_pila;
 
-	nodo = malloc(sizeof(Nodo));
-	nodo->numb = numb;
-	nodo->siguiente = NULL;
-	return (nodo);
+	t_pila = malloc(sizeof(t_pila));
+	t_pila->numb = numb;
+	t_pila->siguiente = NULL;
+	return (t_pila);
 }
 
-void	push(int numb, Nodo **pila)
+void	push(int numb, t_pila **pila)
 {
-	Nodo	*nodo;
+	t_pila	*t_pila;
 
-	nodo = CrearNodo(numb);
-	nodo->siguiente = *pila;
-	*pila = nodo;
-}
-int	pop(Nodo **pila)
-{
-	Nodo	*eliminar;
-	int		data;
-
-	if (*pila == NULL)
-		printf("La pila esta vacia\n");
-	else
-	{
-		eliminar = *pila;
-		data = eliminar->numb;
-		*pila = (*pila)->siguiente;
-		free(eliminar);
-	}
-	return (data);
+	t_pila = Creart_pila(numb);
+	t_pila->siguiente = *pila;
+	*pila = t_pila;
 }
 
-int	Cima(Nodo **pila)
+void	imprimirpila(t_pila **pila)
 {
-	if (*pila == NULL)
-		return (0);
-	else
-		return ((*pila)->numb);
-}
-void	imprimirpila(Nodo **pila)
-{
-	Nodo	*temp;
+	t_pila	*temp;
 
 	temp = *pila;
 	while (temp)
@@ -67,44 +44,33 @@ void	imprimirpila(Nodo **pila)
 	}
 }
 
-int taman_pila(Nodo **pila)
+int	taman_pila(t_pila **pila)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!(*pila))
 		return (0);
 	while (*pila)
 	{
-		*pila = (*pila) -> siguiente;
+		*pila = (*pila)->siguiente;
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
-int pila_ordenada(Nodo **pila)
+void	init_index(t_pila *pilaA, int pila_lenght)
 {
-	while ((*pila) -> siguiente != NULL)
-	{
-		if ((*pila)->numb > (*pila)->siguiente->numb)
-			return (0);
-		*pila = (*pila)->siguiente;
-	}
-	return (1);
-}
+	t_pila	*i;
+	t_pila	*j;
+	int		k;
 
-void init_index(Nodo *pilaA, int pila_lenght)
-{
-	Nodo	*i;
-	Nodo	*j;
-	int	k;
-
-	while(--pila_lenght > 0)
+	while (--pila_lenght > 0)
 	{
 		i = pilaA;
 		k = INT_MIN;
 		j = NULL;
-		while(i)
+		while (i)
 		{
 			if (i->k == INT_MIN && i->index == 0)
 				i->index = 1;
@@ -114,23 +80,10 @@ void init_index(Nodo *pilaA, int pila_lenght)
 				k = i;
 				i = pilaA;
 			}
-			else (i = i->siguiente;
+			else
+				i = i->siguiente;
 		}
-		if (k != NULL);
+		if (k != NULL)
 			k->index = pila_lenght;
 	}
-}
-
-Nodo *ultimo_nodo(Nodo *pila)
-{
-	while(pila && pila->siguiente != NULL)
-		pila = pila->siguiente;
-	return(pila);
-}
-
-Nodo *penultimo_nodo(Nodo *pila)
-{
-	while (pila && pila->siguiente && pila->siguiente->siguiente != NULL)
-		pila = pila->siguiente;
-	retrun (pila);
 }

@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   utils_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 18:34:45 by papa              #+#    #+#             */
-/*   Updated: 2022/12/02 19:47:06 by mankestarkd      ###   ########.fr       */
+/*   Created: 2022/12/02 19:58:54 by mankestarkd       #+#    #+#             */
+/*   Updated: 2022/12/02 20:00:10 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
-t_pila	*pusheo(int argc, char **argv)
+int	pila_ordenada(t_pila **pila)
 {
-	t_pila	*pila;
-	int		i;
-
-	pila = Creart_pila(atoi(argv[1]));
-	i = 2;
-	while (i < argc)
+	while ((*pila)->siguiente != NULL)
 	{
-		push(atoi(argv[i]), &pila);
-		i++;
+		if ((*pila)->numb > (*pila)->siguiente->numb)
+			return (0);
+		*pila = (*pila)->siguiente;
 	}
+	return (1);
+}
+
+t_pila	*ultimo_t_pila(t_pila *pila)
+{
+	while (pila && pila->siguiente != NULL)
+		pila = pila->siguiente;
 	return (pila);
 }
 
-/*t_pila	*pilavacia(void)
+t_pila	*penultimo_t_pila(t_pila *pila)
 {
-	t_pila	*pila;
-
-	if (!(pila = malloc(sizeof(t_pila))))
-		return (NULL);
-	pila->siguiente = NULL;
-	return (pila);
-}*/
+	while (pila && pila->siguiente && pila->siguiente->siguiente != NULL)
+		pila = pila->siguiente;
+	retrun(pila);
+}

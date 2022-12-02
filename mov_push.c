@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_sort.c                                        :+:      :+:    :+:   */
+/*   mov_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 05:36:22 by papa              #+#    #+#             */
-/*   Updated: 2022/12/02 06:21:46 by mankestarkd      ###   ########.fr       */
+/*   Created: 2022/12/02 20:04:30 by mankestarkd       #+#    #+#             */
+/*   Updated: 2022/12/02 20:04:48 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-static void push_swap(Nodo **pilaA, Nodo **pilaB, int taman_pila)
+static void	push_pila(t_pila **init, t_pila **dest)
 {
-    if (taman_pila == 2 && ! check_sorted(*pilaA))
-        sa (pilaA);
-    else if(taman_pila == 3)
-        peque_sort (pilaA);
-    else if (taman_pila > 3 && !check_sorted(*pilaA))
-        sort(pilaA, pilaB);
+	t_pila	*temp;
+
+	if (*init == NULL)
+		return (1);
+	temp = (*init)->siguiente;
+	(*init)->siguiente = *dest;
+	*dest = *init;
+	*init = tmp;
 }
 
+void	pa(t_pila **pila_a, t_pila **pila_b)
+{
+	push_pila(pila_b, pila_a);
+	ft_printf("pa\n");
+}
+
+void	pb(t_pila **pila_a, t_pila **pila_b)
+{
+	push_pila(pila_a, pila_b);
+	ft_printf("pb\n");
+}
