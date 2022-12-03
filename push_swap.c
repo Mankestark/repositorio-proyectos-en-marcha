@@ -6,17 +6,18 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/03 13:15:41 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/03 16:53:48 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include "push_swap.h"
 
-int	check_sorted(t_pila **pila_a)
+int	check_sorted(t_pila *pila)
 {
-	while ((*pila_a)->siguiente != NULL)
+	while (pila->siguiente != NULL)
 	{
-		if ((*pila_a)->index > (*pila_a)->siguiente->index)
+		if (pila->index > pila->siguiente->index)
 			return (0);
 		pila = pila->siguiente;
 	}

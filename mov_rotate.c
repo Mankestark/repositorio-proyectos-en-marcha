@@ -6,10 +6,11 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 20:03:51 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/02 20:04:57 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/03 16:53:32 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include "push_swap.h"
 
 static void	rotate_pila(t_pila **pila)
@@ -17,9 +18,9 @@ static void	rotate_pila(t_pila **pila)
 	t_pila	*temp;
 	t_pila	*temp2;
 
-	temp = *pila_a;
-	*pila_a = (*pila_a)->siguiente;
-	temp1 = ultimo_t_pila(*pila);
+	temp = *pila;
+	*pila = (*pila)->siguiente;
+	temp2 = ultimo_t_pila(*pila);
 	temp->siguiente = NULL;
 	temp2->siguiente = temp;
 }

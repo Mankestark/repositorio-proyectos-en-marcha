@@ -1,5 +1,5 @@
 CC	= gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror 
 NAME = push_swap
 
 SRC	= push_swap.c check_utils.c check.c mov_swap.c mov_push.c mov_reverse.c mov_rotate.c push.c utils.c sort_peque.c utils_sort.c
@@ -8,11 +8,14 @@ OBJ	= $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ) libft
-		 $(cc) $(CFLAGS) -o $@ $< -Llibft -lft
+		 $(CC) $(CFLAGS) -o $@ $< -Llibft -lft
 
-%.o: %.c	$(CC) -c $(CFLAGS) $?
+%.o: %.c	
+		$(CC) -c $(CFLAGS) $?
+		
 
-libft: cd libft && make
+libft: 
+		cd libft && make 
 
 clean: 
 		rm -f $(OBJ)

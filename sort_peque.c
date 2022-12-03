@@ -6,10 +6,11 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 12:21:34 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/02 19:46:25 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/03 16:54:15 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 #include "push_swap.h"
 
 static int	index_high(t_pila *pila)
@@ -30,7 +31,7 @@ void	sort_peque(t_pila **pila)
 {
 	int	mayor;
 
-	if (pila_ordenada(*pila))
+	if (check_sorted(*pila))
 		return ;
 	mayor = index_high(*pila);
 	if ((*pila)->index == mayor)

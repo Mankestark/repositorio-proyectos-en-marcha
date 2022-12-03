@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/03 12:42:14 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/03 16:33:10 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 # include <stdlib.h>
 
 //Definicion del t_pila
-typedef struct pila
+typedef struct l_pila
 {
 	int				numb;
 	int				index;
-	struct t_pila	*siguiente;
+	struct l_pila	*siguiente;
 }					t_pila;
 
 //	PUSH
@@ -75,6 +75,8 @@ void				init_index(t_pila *pila_a, int pila_lenght);
 t_pila				*ultimo_t_pila(t_pila *pila);
 //devuelve el penultimo t_pila
 t_pila				*penultimo_t_pila(t_pila *pila);
+
+int	pila_ordenada(t_pila **pila);
 
 //MOVIMIENTOS
 //hace intercambio en pila_a
