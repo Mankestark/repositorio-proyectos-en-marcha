@@ -6,12 +6,11 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/03 16:53:48 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:29:26 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	check_sorted(t_pila *pila)
 {
@@ -37,16 +36,13 @@ int	main(int argc, char **argv)
 	t_pila	*pila_a;
 	int		pila_lenght;
 
-	//t_pila	*pila_b;
 	if (argc < 2)
 		return (0);
 	if (!check_ok(argv))
 	{
-		printf("Error\n");
+		ft_printf("Error\n");
 		free(pila_a);
-		//	free(pila_b);
 	}
-	//pila_b = NULL;
 	pila_a = pusheo(argc, argv);
 	pila_lenght = taman_pila(&pila_a);
 	push_swap(&pila_a, pila_lenght);

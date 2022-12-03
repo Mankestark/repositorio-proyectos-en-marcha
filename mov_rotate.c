@@ -6,12 +6,11 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 20:03:51 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/03 16:53:32 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:28:37 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void	rotate_pila(t_pila **pila)
 {

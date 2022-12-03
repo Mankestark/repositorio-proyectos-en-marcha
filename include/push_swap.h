@@ -6,14 +6,14 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/03 16:33:10 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:24:25 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -76,7 +76,7 @@ t_pila				*ultimo_t_pila(t_pila *pila);
 //devuelve el penultimo t_pila
 t_pila				*penultimo_t_pila(t_pila *pila);
 
-int	pila_ordenada(t_pila **pila);
+int					pila_ordenada(t_pila **pila);
 
 //MOVIMIENTOS
 //hace intercambio en pila_a

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mannumbestarnumbdev <mannumbestarnumbdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 18:34:45 by papa              #+#    #+#             */
-/*   Updated: 2022/12/03 16:26:38 by mannumbestarnumbd      ###   ########.fr       */
+/*   Created: 2022/12/04 00:29:50 by mankestarkd       #+#    #+#             */
+/*   Updated: 2022/12/04 00:30:23 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_pila	*pusheo(int argc, char **argv)
 {

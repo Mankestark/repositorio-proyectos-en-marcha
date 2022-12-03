@@ -6,12 +6,11 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/03 16:54:45 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:31:31 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_pila	*creart_pila(int numb)
 {

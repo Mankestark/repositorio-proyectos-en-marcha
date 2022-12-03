@@ -6,19 +6,18 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 06:09:54 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/03 16:53:40 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:29:04 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void	swap(t_pila *pila)
 {
 	int	temp;
 
 	if (pila == NULL || pila->siguiente == NULL)
-		return;
+		return ;
 	temp = pila->numb;
 	pila->numb = pila->siguiente->numb;
 	pila->siguiente->numb = temp;

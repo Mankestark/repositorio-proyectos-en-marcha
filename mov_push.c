@@ -6,19 +6,18 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 20:04:30 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/03 16:53:12 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:28:06 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void	push_pila(t_pila **init, t_pila **dest)
 {
 	t_pila	*temp;
 
 	if (*init == NULL)
-		return;
+		return ;
 	temp = (*init)->siguiente;
 	(*init)->siguiente = *dest;
 	*dest = *init;

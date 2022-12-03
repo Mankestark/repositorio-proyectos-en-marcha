@@ -6,12 +6,11 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:50 by papa              #+#    #+#             */
-/*   Updated: 2022/12/03 12:18:12 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 00:27:39 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static int	check_arg_digit(char *argv)
 {
