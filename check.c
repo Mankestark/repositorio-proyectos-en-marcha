@@ -6,12 +6,40 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:34:50 by papa              #+#    #+#             */
-/*   Updated: 2022/12/02 20:28:38 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/03 12:18:12 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
+
+static int	check_arg_digit(char *argv)
+{
+	int	i;
+
+	i = 0;
+	if (check_sign(argv[i]) && argv[i + 1])
+		i++;
+	while (argv[i] && check_digit(argv[i]))
+		i++;
+	if (argv[i] && !check_digit(argv[i]))
+		return (0);
+	return (1);
+}
+
+static int	check_zero(char *argv)
+{
+	int	i;
+
+	i = 0;
+	if (check_sign(argv[i]))
+		i++;
+	while (argv[i] && argv[i] == '0')
+		i++;
+	if (argv[i])
+		return (0);
+	return (1);
+}
 
 static int	check_repetido(char **argv)
 {
@@ -51,44 +79,5 @@ int	check_ok(char **argv)
 		return (0);
 	if (check_repetido(argv))
 		return (0);
-	return (1);
-}
-
-static int	check_arg_digit(char *argv)
-{
-	int	i;
-
-	i = 0;
-	if (check_sign(argv[i]) && argv[i + 1])
-		i++;
-	while (argv[i] && check_digit(argv[i]))
-		i++;
-	if (argv[i] && !check_digit(argv[i]))
-		return (0);
-	return (1);
-}
-
-static int	check_zero(char *argv)
-{
-	int	i;
-
-	i = 0;
-	if (check_sign(argv[i]))
-		i++;
-	while (argv[i] && argv[i] == '0')
-		i++;
-	if (argv[i])
-		return (0);
-	return (1);
-}
-
-int	check_sorted(t_pila *pila)
-{
-	while (pila->siguiente != NULL)
-	{
-		if (pila->numb > pila->siguiente->numb)
-			return (0);
-		pila = pila->siguiente;
-	}
 	return (1);
 }

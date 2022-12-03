@@ -6,11 +6,22 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/02 23:04:28 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/03 13:15:41 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_sorted(t_pila **pila_a)
+{
+	while ((*pila_a)->siguiente != NULL)
+	{
+		if ((*pila_a)->index > (*pila_a)->siguiente->index)
+			return (0);
+		pila = pila->siguiente;
+	}
+	return (1);
+}
 
 static void	push_swap(t_pila **pila_a, int taman_pila)
 {
@@ -23,16 +34,16 @@ static void	push_swap(t_pila **pila_a, int taman_pila)
 int	main(int argc, char **argv)
 {
 	t_pila	*pila_a;
-	//t_pila	*pila_b;
 	int		pila_lenght;
 
+	//t_pila	*pila_b;
 	if (argc < 2)
 		return (0);
 	if (!check_ok(argv))
 	{
 		printf("Error\n");
 		free(pila_a);
-	//	free(pila_b);
+		//	free(pila_b);
 	}
 	//pila_b = NULL;
 	pila_a = pusheo(argc, argv);
