@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/04 00:29:26 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 12:56:21 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,32 @@ int	check_sorted(t_pila *pila)
 	return (1);
 }
 
-static void	push_swap(t_pila **pila_a, int taman_pila)
+static void	push_swap(t_pila **pila_a, t_pila **pila_b, int pila_lenght)
 {
-	if (taman_pila == 2 && !check_sorted(*pila_a))
+	if (pila_lenght == 2 && !check_sorted(*pila_a))
 		sa(pila_a);
-	else if (taman_pila == 3)
+	else if (pila_lenght == 3)
 		sort_peque(pila_a);
+	else if (pila_lenght > 3 && !check_sorte(*pila_a))
+		
 }
 
 int	main(int argc, char **argv)
 {
 	t_pila	*pila_a;
+	t_pila	*pila_b;
 	int		pila_lenght;
 
 	if (argc < 2)
 		return (0);
 	if (!check_ok(argv))
-	{
 		ft_printf("Error\n");
-		free(pila_a);
-	}
+	pila_b = NULL;
 	pila_a = pusheo(argc, argv);
-	pila_lenght = taman_pila(&pila_a);
-	push_swap(&pila_a, pila_lenght);
+	pila_lenght = taman_pila(pila_a);
+	init_index(pila_a, pila_lenght + 1);
+	push_swap(&pila_a, &pila_b, pila_lenght);
+	free(pila_a);
+	free(pila_b);
 	return (0);
 }

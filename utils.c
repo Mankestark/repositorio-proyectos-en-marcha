@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:56:56 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/04 00:31:31 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 12:39:37 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ void	imprimirpila(t_pila **pila)
 	}
 }
 
-int	taman_pila(t_pila **pila)
+int	taman_pila(t_pila *pila)
 {
 	int	i;
 
 	i = 0;
-	if (!(*pila))
+	if (!pila)
 		return (0);
-	while (*pila)
+	while (pila)
 	{
-		*pila = (*pila)->siguiente;
+		pila = pila->siguiente;
 		i++;
 	}
 	return (i);

@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/04 00:24:25 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/04 12:58:36 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int					check_sign(char c);
 int					check_arg_comp(const char *c1, const char *c2);
 
 //mide el tamaño de la pila
-int					taman_pila(t_pila **pila);
+int					taman_pila(t_pila *pila);
 
 //INIT_SORT
 void				sa(t_pila **pila_a);
@@ -105,5 +105,9 @@ void				rrr(t_pila **pila_a, t_pila **pila_b);
 //SORT_PEQUE
 //hace ordenacion con 3 elementos
 void				sort_peque(t_pila **pila);
+
+//SORT
+//hace ordenacion de mas de 3 elementos
+void				sort(t_pila **pila_a, t_pila **pila_b);
 
 #endif
