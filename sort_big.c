@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:29:16 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/06 23:28:45 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/07 06:28:50 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,15 @@ static void	pushea_menos_tres(t_pila **pila_a, t_pila **pila_b)
 	{
 		pb(pila_a, pila_b);
 		j++;
+	}
+}
+
+void	sort_big(t_pila **pila_a, t_pila **pila_b)
+{
+	pushea_menos_tres(pila_a, pila_b);
+	sort_peque(pila_a);
+	while (*pila_b)
+	{
+		
 	}
 }

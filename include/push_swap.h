@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/04 12:58:36 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/07 05:42:41 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct l_pila
 {
 	int				numb;
 	int				index;
+	int				pos;
+	int				obj_pos;
+	int				mov_a;
+	int				mov_b;
 	struct l_pila	*siguiente;
 }					t_pila;
 
