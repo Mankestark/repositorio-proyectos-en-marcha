@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/04 22:28:06 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/07 10:27:12 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	push_swap(t_pila **pila_a, t_pila **pila_b, int pila_lenght)
 	else if (pila_lenght == 3)
 		sort_peque(pila_a);
 	else if (pila_lenght > 3 && !check_sorted(*pila_a))
-		sort(pila_a, pila_b);
+		sort(pila_a, pila_b, ft_nbrlen_base(pila_lenght, 2), 0);
 }
 
 int	main(int argc, char **argv)
