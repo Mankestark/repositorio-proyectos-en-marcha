@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 00:29:50 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/04 00:30:23 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/07 23:58:52 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,3 @@ void	init_index(t_pila *pila_a, int pila_lenght)
 			j->index = pila_lenght;
 	}
 }
-
-/*t_pila	*pilavacia(void)
-{
-	t_pila	*pila;
-
-	if (!(pila = malloc(sizeof(t_pila))))
-		return (NULL);
-	pila->siguiente = NULL;
-	return (pila);
-}*/
