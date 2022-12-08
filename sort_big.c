@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:29:16 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 16:46:29 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 20:54:02 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	sort(t_pila **pila_a, t_pila **pila_b)
 	sort_peque(pila_a);
 	while (*pila_b)
 	{
-		get_target_position(stack_a, stack_b);
+		posicion_objetivo(stack_a, stack_b);
 		get_cost(stack_a, stack_b);
 		do_cheapest_move(stack_a, stack_b);
 	}

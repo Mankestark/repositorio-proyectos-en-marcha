@@ -6,23 +6,23 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:02:34 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 17:03:38 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 21:03:03 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	get_cost(t_stack **stack_a, t_stack **stack_b)
+void	get_cost(t_pila **pila_a, t_pila **pila_b)
 {
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
+	t_pila	*tmp_a;
+	t_pila	*tmp_b;
 	int		size_a;
 	int		size_b;
 
-	tmp_a = *stack_a;
-	tmp_b = *stack_b;
-	size_a = get_stack_size(tmp_a);
-	size_b = get_stack_size(tmp_b);
+	tmp_a = *pila_a;
+	tmp_b = *pila_b;
+	size_a = taman_pila(tmp_a);
+	size_b = taman_pila(tmp_b);
 	while (tmp_b)
 	{
 		tmp_b->cost_b = tmp_b->pos;
@@ -31,17 +31,13 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 		tmp_b->cost_a = tmp_b->target_pos;
 		if (tmp_b->target_pos > size_a / 2)
 			tmp_b->cost_a = (size_a - tmp_b->target_pos) * -1;
-		tmp_b = tmp_b->next;
+		tmp_b = tmp_b->siguiente;
 	}
 }
 
-/* do_cheapest_move:
-*	Finds the element in stack B with the cheapest cost to move to stack A
-*	and moves it to the correct position in stack A.
-*/
-void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
+void	do_cheapest_move(t_pila **pila_a, t_pila **pila_b)
 {
-	t_stack	*tmp;
+	t_pila	*tmp;
 	int		cheapest;
 	int		cost_a;
 	int		cost_b;
