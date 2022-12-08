@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:02:34 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 21:03:03 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 22:16:06 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	do_cheapest_move(t_pila **pila_a, t_pila **pila_b)
 	int		cost_a;
 	int		cost_b;
 
-	tmp = *stack_b;
+	tmp = *pila_b;
 	cheapest = INT_MAX;
 	while (tmp)
 	{
@@ -52,7 +52,7 @@ void	do_cheapest_move(t_pila **pila_a, t_pila **pila_b)
 			cost_a = tmp->cost_a;
 			cost_b = tmp->cost_b;
 		}
-		tmp = tmp->next;
+		tmp = tmp->siguiente;
 	}
-	do_move(stack_a, stack_b, cost_a, cost_b);
+	do_move(pila_a, pila_b, cost_a, cost_b);
 }

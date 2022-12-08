@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/08 21:00:20 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/09 00:47:47 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void				init_index(t_pila *pila_a, int pila_lenght);
 
 //SORT_BIG
 //ordena mas de 3 argumentos
-int					sort(t_pila **pila_a, t_pila **pila_b, int max, int n);
+void				sort(t_pila **pila_a, t_pila **pila_b);
 
 //SORT_PEQUE
 //ordena 3 o menos argumentos
@@ -98,28 +98,34 @@ int					index_minor(t_pila **pila);
 //obtiene la posicion del objetivo
 void				posicion_objetivo(t_pila **pila_a, t_pila **pila_b);
 
-//mide el tamaño de la pila
-int					taman_pila(t_pila *pila);
-
 //UTILS_SORT
 //ultimo elemento de la pila
 t_pila				*ultimo_t_pila(t_pila *pila);
 //penultimo elemento de la pila
 t_pila				*penultimo_t_pila(t_pila *pila);
-
-//añade un elemento al final de la pila
-void				ft_lstadd_back(t_pila **alst, t_pila *new);
-//devuelve el tamaño del int en base x
-int					ft_nbrlen_base(int n, unsigned int base);
-//devuelve el valor absoluto
-unsigned int		ft_abs(int n);
+//mide el valor absoluto del entero
+int					nb_abs(int nb);
+//imprime la pila
+void				imprimirpila(t_pila **pila);
+//MOVS
+//obtiene el coste de los movimientos
+void				get_cost(t_pila **pila_a, t_pila **pila_b);
+//obtiene el elemento con menos movimientos
+void				do_cheapest_move(t_pila **pila_a, t_pila **pila_b);
+//UTILS_MOVS
+//mueve los elementos para ordenar
+void				do_move(t_pila **pila_a, t_pila **pila_b, int cost_a,
+						int cost_b);
 
 //UTILS
+//mide el tamaño de la pila
+int					taman_pila(t_pila *pila);
 //Crear un t_pila y a la ve
 t_pila				*creart_pila(int numb);
 //Introducir un t_pila
 void				push(int numb, t_pila **pila);
-//imprimir pila
+//añade al final de la pila
+void				add_final(t_pila **pila, t_pila *new);
 void				imprimirpila(t_pila **pila);
 //devuelver el tamaño de la pila
 int					taman_pila(t_pila *pila);
@@ -127,5 +133,9 @@ int					taman_pila(t_pila *pila);
 //PUSH_SWAP
 //comprueba que la pila_a esta ordenada
 int					check_sorted(t_pila *pila);
-
+//ERROR
+//libera la memoria de la pila
+void				free_pila(t_pila **pila);
+//imprime el error
+void				go_error(t_pila **pila_a, t_pila **pila_b);
 #endif

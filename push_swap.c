@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/08 21:34:32 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/09 00:49:27 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ int	check_sorted(t_pila *pila)
 
 static void	push_swap(t_pila **pila_a, t_pila **pila_b, int pila_lenght)
 {
-	int	max;
-
-	max = taman_pila(*pila_a) - 1;
 	if (pila_lenght == 2 && !check_sorted(*pila_a))
 		sa(pila_a);
 	else if (pila_lenght == 3)
@@ -39,19 +36,20 @@ static void	push_swap(t_pila **pila_a, t_pila **pila_b, int pila_lenght)
 int	main(int argc, char **argv)
 {
 	t_pila	*pila_a;
-	t_pila	*pila_b;
 	int		pila_lenght;
+	t_pila	*pila_b;
 
 	if (argc < 2)
 		return (0);
 	if (!check_ok(argv))
-		ft_printf("Error\n");
+		go_error(NULL, NULL);
 	pila_b = NULL;
 	pila_a = pusheo(argc, argv);
 	pila_lenght = taman_pila(pila_a);
 	init_index(pila_a, pila_lenght + 1);
 	push_swap(&pila_a, &pila_b, pila_lenght);
-	free(pila_a);
-	free(pila_b);
+	imprimirpila(&pila_a);
+	free_pila(&pila_a);
+	free_pila(&pila_b);
 	return (0);
 }

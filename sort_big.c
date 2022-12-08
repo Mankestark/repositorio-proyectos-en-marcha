@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:29:16 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 20:54:02 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 22:11:42 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	change_stack(t_pila **pila_a)
 	int	stack_size;
 
 	stack_size = taman_pila(*pila_a);
-	lowest_pos = get_lowest_index_position(stack_a);
+	lowest_pos = index_minor(pila_a);
 	if (lowest_pos > stack_size / 2)
 	{
 		while (lowest_pos < stack_size)
@@ -70,9 +70,10 @@ void	sort(t_pila **pila_a, t_pila **pila_b)
 	sort_peque(pila_a);
 	while (*pila_b)
 	{
-		posicion_objetivo(stack_a, stack_b);
-		get_cost(stack_a, stack_b);
-		do_cheapest_move(stack_a, stack_b);
+		posicion_objetivo(pila_a, pila_b);
+		get_cost(pila_a, pila_b);
+		do_cheapest_move(pila_a, pila_b);
 	}
 	if (!check_sorted(*pila_a))
 		change_stack(pila_a);
+}

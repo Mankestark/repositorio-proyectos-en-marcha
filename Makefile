@@ -2,7 +2,7 @@ CC	= gcc
 FLAGS = -Wall -Wextra -Werror 
 NAME = push_swap
 
-SRC	= push_swap.c check_utils.c check.c mov_swap.c mov_push.c mov_reverse.c mov_rotate.c push.c utils.c sort_peque.c utils_sort.c sort_big.c utils_sort_big.c
+SRC	= push_swap.c check_utils.c error.c check.c mov_swap.c mov_push.c mov_reverse.c mov_rotate.c push.c utils.c sort_peque.c utils_sort.c sort_big.c utils_sort_big.c movs.c utils_movs.c
 OBJ	= $(SRC:.c=.o)
 
 INCS	=	./include/

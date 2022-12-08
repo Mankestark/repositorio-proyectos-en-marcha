@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 00:29:50 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/07 23:58:52 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/09 00:29:22 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,52 @@
 
 t_pila	*pusheo(int argc, char **argv)
 {
-	t_pila	*pila;
-	int		i;
+	t_pila		*pila_a;
+	int			i;
+	long int	nb;
 
-	pila = creart_pila(ft_atoi(argv[1]));
-	i = 2;
+	i = 1;
+	nb = 0;
+	pila_a = NULL;
 	while (i < argc)
 	{
-		push(ft_atoi(argv[i]), &pila);
+		nb = ft_atoi(argv[i]);
+		if (nb > INT_MAX || nb < INT_MIN)
+			go_error(&pila_a, NULL);
+		if (i == 1)
+			pila_a = creart_pila((int)nb);
+		else
+			push(nb, &pila_a);
 		i++;
 	}
-	return (pila);
+	return (pila_a);
 }
 
 void	init_index(t_pila *pila_a, int pila_lenght)
 {
-	t_pila	*i;
-	t_pila	*j;
-	int		numb;
+	t_pila	*ptr;
+	t_pila	*high;
+	int		val;
 
 	while (--pila_lenght > 0)
 	{
-		i = pila_a;
-		numb = INT_MIN;
-		j = NULL;
-		while (i)
+		ptr = pila_a;
+		val = INT_MIN;
+		high = NULL;
+		while (ptr)
 		{
-			if (i->numb == INT_MIN && i->index == 0)
-				i->index = 1;
-			if (i->numb > numb && i->index == 0)
+			if (ptr->numb == INT_MIN && ptr->index == 0)
+				ptr->index = 1;
+			if (ptr->numb > val && ptr->index == 0)
 			{
-				numb = i->numb;
-				j = i;
-				i = pila_a;
+				val = ptr->numb;
+				high = ptr;
+				ptr = pila_a;
 			}
 			else
-				i = i->siguiente;
+				ptr = ptr->siguiente;
 		}
-		if (j != NULL)
-			j->index = pila_lenght;
+		if (high != NULL)
+			high->index = pila_lenght;
 	}
 }

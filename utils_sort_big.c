@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 22:55:57 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 16:55:54 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 22:14:17 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	index_minor(t_pila **pila)
 
 	tmp = *pila;
 	lowest_index = INT_MAX;
-	obt_posicion(stack);
+	obt_posicion(pila);
 	lowest_pos = tmp->pos;
 	while (tmp)
 	{
@@ -44,7 +44,7 @@ int	index_minor(t_pila **pila)
 			lowest_index = tmp->index;
 			lowest_pos = tmp->pos;
 		}
-		tmp = tmp->next;
+		tmp = tmp->siguiente;
 	}
 	return (lowest_pos);
 }
@@ -91,6 +91,6 @@ void	posicion_objetivo(t_pila **pila_a, t_pila **pila_b)
 	{
 		target_pos = objetivo(pila_a, tmp_b->index, INT_MAX, target_pos);
 		tmp_b->target_pos = target_pos;
-		tmp_b = tmp_b->next;
+		tmp_b = tmp_b->siguiente;
 	}
 }
