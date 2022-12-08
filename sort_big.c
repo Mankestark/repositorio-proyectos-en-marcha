@@ -6,37 +6,73 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 22:29:16 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 01:37:05 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 16:46:29 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	sort(t_pila **pila_a, t_pila **pila_b, int max, int n)
+static void	push_menos_tres(t_pila **pila_a, t_pila **pila_b)
 {
+	int	stack_size;
+	int	pushed;
 	int	i;
-	int	len;
-	int	limit;
 
-	if (n > max || check_sorted(*pila_a))
+	stack_size = taman_pila(*pila_a);
+	pushed = 0;
+	i = 0;
+	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
 	{
-		while (taman_pila(*pila_b))
-			push_ab(pila_a, pila_b, 'a');
-		return (0);
-	}
-	i = -1;
-	len = taman_pila(*pila_b);
-	limit = element_orden(*pila_a, *pila_b, 'a');
-	while (++i < len - limit && !check_sorted(*pila_a))
-	{
-		if (!((*pila_a)->numb >> n & 1))
-			push_ab(pila_b, pila_a, 'b');
+		if ((*pila_a)->index <= stack_size / 2)
+		{
+			pb(pila_a, pila_b);
+			pushed++;
+		}
 		else
-			rotate_ab(pila_a, 'a');
+			ra(pila_a);
+		i++;
 	}
-	i = -1;
-	len = taman_pila(*pila_b);
-	while (++i < len - element_orden(*pila_a, *pila_b, 'b'))
-		push_ab(pila_a, pila_b, 'a');
-	return (sort(pila_a, pila_b, max, n + 1));
+	while (stack_size - pushed > 3)
+	{
+		pb(pila_a, pila_b);
+		pushed++;
+	}
 }
+
+static void	change_stack(t_pila **pila_a)
+{
+	int	lowest_pos;
+	int	stack_size;
+
+	stack_size = taman_pila(*pila_a);
+	lowest_pos = get_lowest_index_position(stack_a);
+	if (lowest_pos > stack_size / 2)
+	{
+		while (lowest_pos < stack_size)
+		{
+			rra(pila_a);
+			lowest_pos++;
+		}
+	}
+	else
+	{
+		while (lowest_pos > 0)
+		{
+			ra(pila_a);
+			lowest_pos--;
+		}
+	}
+}
+
+void	sort(t_pila **pila_a, t_pila **pila_b)
+{
+	push_menos_tres(pila_a, pila_b);
+	sort_peque(pila_a);
+	while (*pila_b)
+	{
+		get_target_position(stack_a, stack_b);
+		get_cost(stack_a, stack_b);
+		do_cheapest_move(stack_a, stack_b);
+	}
+	if (!check_sorted(*pila_a))
+		change_stack(pila_a);

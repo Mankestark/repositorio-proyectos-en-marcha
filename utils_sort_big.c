@@ -6,96 +6,91 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 22:55:57 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/08 00:41:19 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 16:55:54 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	*pop(t_pila **pila)
+static void	obt_posicion(t_pila **pila)
 {
-	void	*out;
-	t_pila	*head;
+	t_pila	*tmp;
+	int		i;
 
-	out = NULL;
-	if (!pila || !pila[0])
-		return (NULL);
-	head = *pila;
-	if (head->siguiente)
+	tmp = *pila;
+	i = 0;
+	while (tmp)
 	{
-		*pila = head->siguiente;
-		out = head->numb;
-		free(head);
-		return (out);
+		tmp->pos = i;
+		tmp = tmp->siguiente;
+		i++;
 	}
-	out = head->numb;
-	free(head);
-	*pila = NULL;
-	return (out);
 }
 
-int	push_ab(t_pila **pila_a, t_pila **pila_b, char c)
+int	index_minor(t_pila **pila)
 {
-	void	*temp;
+	t_pila	*tmp;
+	int		lowest_index;
+	int		lowest_pos;
 
-	if (taman_pila(*pila_b))
+	tmp = *pila;
+	lowest_index = INT_MAX;
+	obt_posicion(stack);
+	lowest_pos = tmp->pos;
+	while (tmp)
 	{
-		temp = pop(b);
-		push(temp, pila_a);
-		free(temp);
-		if (c == 'a')
-			;
-		ft_printf("pa\n");
-		if (c == 'b')
-			;
-		ft_printf("pb\n");
-		return (1);
+		if (tmp->index < lowest_index)
+		{
+			lowest_index = tmp->index;
+			lowest_pos = tmp->pos;
+		}
+		tmp = tmp->next;
 	}
-	return (0);
+	return (lowest_pos);
 }
 
-int element_orden(t_pila *pila_a, t_pila *pila_b, char c)
+static int	objetivo(t_pila **pila_a, int b_idx, int target_idx, int target_pos)
 {
-    int len;
-    int count;
+	t_pila	*tmp_a;
 
-    count = 0;
-    len = 0;
-    while (c == 'a' && pila_a)
-    {
-        if (*(int*)pila_a->numb == len;
-            count++;
-        else
-            count = 0;
-        len++;
-        pila_a = pila_a->siguiente;
-    }
-    len = (taman_pila(pila_b) - 1);
-    while (c == 'b' && pila_b)
-    {
-        if (*(int *)b->numb == len)
-            count++;
-        else 
-            coutn = 0;
-        len--;
-        pila_b = pila_b->siguiente;
-    }
-    return (count)
+	tmp_a = *pila_a;
+	while (tmp_a)
+	{
+		if (tmp_a->index > b_idx && tmp_a->index < target_idx)
+		{
+			target_idx = tmp_a->index;
+			target_pos = tmp_a->pos;
+		}
+		tmp_a = tmp_a->siguiente;
+	}
+	if (target_idx != INT_MAX)
+		return (target_pos);
+	tmp_a = *pila_a;
+	while (tmp_a)
+	{
+		if (tmp_a->index < target_idx)
+		{
+			target_idx = tmp_a->index;
+			target_pos = tmp_a->pos;
+		}
+		tmp_a = tmp_a->siguiente;
+	}
+	return (target_pos);
 }
 
-int rotate_ab(t_pila **pila, char c)
+void	posicion_objetivo(t_pila **pila_a, t_pila **pila_b)
 {
-    void    *contenido;
-    
-    if(taman_pila(*pila) > 1)
-    {
-        contenido = pop(pila);
-        ft_lstadd_back(pila, creart_pila(contenido));
-        if (c == 'a')
-            ft_printf("ra\n");
-        if (c== 'b')
-            ft_printf("rb\n");
-        return (1);
-    }
-    return (0);
+	t_pila	*tmp_b;
+	int		target_pos;
+
+	tmp_b = *pila_b;
+	obt_posicion(pila_a);
+	obt_posicion(pila_b);
+	target_pos = 0;
+	while (tmp_b)
+	{
+		target_pos = objetivo(pila_a, tmp_b->index, INT_MAX, target_pos);
+		tmp_b->target_pos = target_pos;
+		tmp_b = tmp_b->next;
+	}
 }

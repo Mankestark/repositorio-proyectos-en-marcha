@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/08 01:05:09 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/08 17:00:02 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct l_pila
 {
 	int				numb;
 	int				index;
+	int				pos;
 	struct l_pila	*siguiente;
 }					t_pila;
 
@@ -89,14 +90,10 @@ int					sort(t_pila **pila_a, t_pila **pila_b, int max, int n);
 void				sort_peque(t_pila **pila);
 
 //UTILS_SORT_BIG
-//extrae el primer argumento de la pila
-void				*pop(t_pila **pila);
-//pushea el primer argumento de una pila a otra
-int					push_ab(t_pila **pila_a, t_pila **pila_b, char c);
-//comprueba elementos ordenados
-int					element_orden(t_pila *pila_a, t_pila *pila_b, char c);
-//mueve cada elemento una posicion hacia arriba
-int					rotate_ab(t_pila **pila, char c);
+//obtiene el indice
+int					index_minor(t_pila **pila);
+//obtiene la posicion del objetivo
+void				posicion_objetivo(t_pila **pila_a, t_pila **pila_b);
 
 //mide el tamaño de la pila
 int					taman_pila(t_pila *pila);
