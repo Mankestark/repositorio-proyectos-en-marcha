@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 00:29:50 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/09 00:29:22 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/09 11:37:41 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_pila	*pusheo(int argc, char **argv)
 	while (i < argc)
 	{
 		nb = ft_atoi(argv[i]);
-		if (nb > INT_MAX || nb < INT_MIN)
+		if (nb > 2147483547 || nb < -2147483648)
 			go_error(&pila_a, NULL);
 		if (i == 1)
 			pila_a = creart_pila((int)nb);

@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/09 00:49:27 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/09 11:40:44 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 	pila_lenght = taman_pila(pila_a);
 	init_index(pila_a, pila_lenght + 1);
 	push_swap(&pila_a, &pila_b, pila_lenght);
-	imprimirpila(&pila_a);
+	//imprimirpila(&pila_a);
 	free_pila(&pila_a);
 	free_pila(&pila_b);
 	return (0);
