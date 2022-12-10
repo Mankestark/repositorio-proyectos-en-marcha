@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/10 07:08:35 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/10 07:29:18 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,7 @@ int	main(int argc, char **argv)
 	t_pila	*pila_a;
 	int		pila_lenght;
 	t_pila	*pila_b;
-	//char	**temp;
-	//int	size;
-	
-	//temp = (argc == 2) ? ft_split(argv[1], ' ') : NULL;	
-	//size = (argc == 2) ? 
-	if (argc < 2)
-		return (0);
+
 	if (!check_ok(argv))
 		go_error(NULL, NULL);
 	pila_b = NULL;
