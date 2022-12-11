@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mariza <mariza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/11 13:20:59 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/11 17:51:32 by mariza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ void				go_error(t_pila **pila_a, t_pila **pila_b);
 //UTILS2
 //divide el primer argumento en trozos
 char				**ft_strsplit(char const *s, char c);
+int					ft_tab_size(char **tab);
 char				*ft_strnew(size_t size);
-
+t_pila				*pusheo_one(char *argv[]);
 #endif

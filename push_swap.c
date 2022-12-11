@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mariza <mariza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:32:41 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/11 13:16:19 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/11 17:51:16 by mariza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,13 @@ static void	push_swap(t_pila **pila_a, t_pila **pila_b, int pila_lenght)
 int	main(int argc, char *argv[])
 {
 	t_pila	*pila_a;
-	int		pila_lenght;
 	t_pila	*pila_b;
-	char	**tab;
+	int		pila_lenght;
 
 	if (argc == 2)
 	{
-		tab = ft_strsplit(argv[1], ' ');
-		if (!check_ok(argv))
-			go_error(NULL, NULL);
 		pila_b = NULL;
-		pila_a = pusheo(argc, tab);
+		pila_a = pusheo_one(argv);
 	}
 	else
 	{
@@ -58,7 +54,6 @@ int	main(int argc, char *argv[])
 	pila_lenght = taman_pila(pila_a);
 	init_index(pila_a, pila_lenght + 1);
 	push_swap(&pila_a, &pila_b, pila_lenght);
-	//imprimirpila(&pila_a);
 	free_pila(&pila_a);
 	free_pila(&pila_b);
 	return (0);

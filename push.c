@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mariza <mariza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 00:29:50 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/11 13:21:36 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/11 17:26:08 by mariza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ t_pila	*pusheo(int argc, char *argv[])
 			push(nb, &pila_a);
 		argc--;
 	}
-	//imprimirpila(&pila_a);
 	return (pila_a);
 }
 
