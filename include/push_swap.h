@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 22:52:08 by arimar            #+#    #+#             */
-/*   Updated: 2022/12/09 00:47:47 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/11 13:20:59 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,4 +138,9 @@ int					check_sorted(t_pila *pila);
 void				free_pila(t_pila **pila);
 //imprime el error
 void				go_error(t_pila **pila_a, t_pila **pila_b);
+//UTILS2
+//divide el primer argumento en trozos
+char				**ft_strsplit(char const *s, char c);
+char				*ft_strnew(size_t size);
+
 #endif

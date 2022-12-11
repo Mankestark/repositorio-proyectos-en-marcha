@@ -6,13 +6,13 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 00:29:50 by mankestarkd       #+#    #+#             */
-/*   Updated: 2022/12/10 07:18:17 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2022/12/11 13:21:36 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_pila	*pusheo(int argc, char **argv)
+t_pila	*pusheo(int argc, char *argv[])
 {
 	t_pila		*pila_a;
 	long int	nb;
