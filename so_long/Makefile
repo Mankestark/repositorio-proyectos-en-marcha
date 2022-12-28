@@ -1,34 +1,36 @@
 CC	= gcc
+
 FLAGS	= -Wall -Wextra -Werror
+
 NAME	= so_long
 
 SRC	= so_long.c
-OBJ	= $(SRC:.c=.o)
 
-LIBFT_PATH	=	./libft/
+OBJ	= $(SRC: .c=.o)
 
-CFLAGS	=	-I$(LIBFT_PATH) $(FLAGS)
+INCS =	./include/
 
-LINKS	=	-L $(LIBFT_PATH) -lft
+LIBFT_PATH =	./libft/
 
-all: libft $(NAME)
+CFLAGS =	-I$(LIBFT_PATH)include/ -I$(INCS) $(FLAGS) -I/usr/include -Imlx_linux
 
-$NAME: libft $(OBJ)
-	@$(CC) $(FLAGS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(OBJ) $(LINKS)
+LINKS =	-L $(LIBFT_PATH) -lft
 
+all:	libft $(NAME)
 
-%.o: %.c
-	$(CC) -I/usr/include -Imlx_linux -03 -c $< -o $@
+$(NAME): libft $(OBJ)
+	@$(CC) -o $(NAME) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz $(CFLAGS) $(LINKS)
 
-libft:	
+libft:
 	@make -C $(LIBFT_PATH)
 
-clean:	
-	@rm -f $(FLAGS)
+clean:
+	@rm -f $(OBJ)
 	@make -C $(LIBFT_PATH) clean
-fclean:
-	@rm -f (NAME) $(LIBFT_PATH) libft.all
+
+fclean: clean	
+	@rm -f $(NAME) $(LIBFT_PATH)libft.a
 
 re:	fclean all
 
-.PHONY:	all libft clean fclean re
+.PHONY: all libft clean fclean re
