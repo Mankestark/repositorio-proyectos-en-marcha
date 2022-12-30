@@ -1,35 +1,35 @@
 CC	= gcc
 
-FLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -I $(MLX_DIR) -I $(LIBFT_PATH)
 
 NAME	= so_long
 
 SRC	= so_long.c
 
-OBJ	= $(SRC: .c=.o)
-
-INCS =	./include/
+OBJ	= $(SRC:.c=.o)
 
 LIBFT_PATH =	./libft/
 
-CFLAGS =	-I$(LIBFT_PATH)include/ -I$(INCS) $(FLAGS) -I/usr/include -Imlx_linux
+MLX_DIR = ./minilibx-linux
 
-LINKS =	-L $(LIBFT_PATH) -lft
+all: $(NAME)
 
-all:	libft $(NAME)
+$(NAME): $(MLX_DIR) $(LIBFT_PATH) $(OBJ) 
+	@$(MAKE) -C $(MLX_DIR)
+	@$(MAKE) -C $(LIBFT_PATH)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)  -L $(MLX_DIR) -lmlx -lXext -lX11 -L $(LIBFT_PATH) -lft
+	
+$(MLX_DIR):
+	git clone https://github.com/42Paris/minilibx-linux.git $(MLX_DIR)
 
-$(NAME): libft $(OBJ)
-	@$(CC) -o $(NAME) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz $(CFLAGS) $(LINKS)
-
-libft:
-	@make -C $(LIBFT_PATH)
 
 clean:
+	@$(MAKE) -C $(LIBFT_PATH) clean
 	@rm -f $(OBJ)
-	@make -C $(LIBFT_PATH) clean
 
 fclean: clean	
-	@rm -f $(NAME) $(LIBFT_PATH)libft.a
+	@$(MAKE) -C $(LIBFT_PATH) fclean
+	@rm -rf $(NAME) $(MLX_DIR)
 
 re:	fclean all
 
