@@ -1,6 +1,6 @@
 CC	= gcc
 
-CFLAGS	= -Wall -Wextra -Werror -I $(MLX_DIR) -I $(LIBFT_PATH)
+CFLAGS	= -I $(MLX_DIR) -I $(LIBFT_PATH) -I $(SO_LONG_H)
 
 NAME	= so_long
 
@@ -12,9 +12,11 @@ LIBFT_PATH =	./libft/
 
 MLX_DIR = ./minilibx-linux
 
+SO_LONG_H = ./include
+
 all: $(NAME)
 
-$(NAME): $(MLX_DIR) $(LIBFT_PATH) $(OBJ) 
+$(NAME): $(MLX_DIR) $(LIBFT_PATH) $(SO_LONG_H) $(OBJ) 
 	@$(MAKE) -C $(MLX_DIR)
 	@$(MAKE) -C $(LIBFT_PATH)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)  -L $(MLX_DIR) -lmlx -lXext -lX11 -L $(LIBFT_PATH) -lft
