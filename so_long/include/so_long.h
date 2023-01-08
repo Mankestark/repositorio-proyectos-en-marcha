@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:17:02 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/04 01:52:12 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/09 00:25:12 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 # include <mlx.h>
 # include <stdio.h>
-# include "./libft.h"
+# include "libft/libft.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
 
 typedef struct s_img
 {
+	void	*imp_ptr;
 	void	*mlx_img;
 	char	*addr;
 	int		bpp;

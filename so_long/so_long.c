@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 02:48:58 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/04 01:40:27 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/09 00:19:18 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	check_args(argc, argv);
+	
 	data.mlx_ptr = mlx_init();
 	if (data.mlx_ptr == NULL)
 		return (1);
