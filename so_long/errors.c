@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 00:16:17 by mankestark        #+#    #+#             */
-/*   Updated: 2023/01/09 13:41:48 by mankestarkd      ###   ########.fr       */
+/*   Created: 2023/01/09 13:38:35 by mankestarkd       #+#    #+#             */
+/*   Updated: 2023/01/09 13:42:04 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-int	check_args(int argc, char **argv)
+int	error(char *msg)
 {
-	if (argc < 2)
-	{
-		error("Introduce el nombre del mapa como argumento\n\
- ./so_long map/map.ber\n");
-		exit(EXIT_FAILURE);
-	}
-	if (argc > 2)
-	{
-		error("Demasiados argumentos\n");
-		exit(EXIT_FAILURE);
-	}
-	if (ft_strstr(argv[1], ".ber") == NULL)
-	{
-		error("Mapa invalido\n");
-		exit(EXIT_FAILURE);
-	}
+	ft_printf("Error: %s", msg);
+	exit(EXIT_FAILURE);
 	return (0);
 }
