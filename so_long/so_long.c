@@ -3,21 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 02:48:58 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 00:19:18 by mankestark       ###   ########.fr       */
+/*   Updated: 2023/01/09 09:10:06 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+int	init(t_data *data)
+{
+	data->map.mtx = malloc((data->map.size.y + 1) * sizeof(char *));
+	data->map.mtx[data->map.size.y] = NULL;
+	data->game.count_steps = 0;
+	return (0);
+}
 
 int	main(int argc, char **argv)
 {
 	t_data	data;
 
 	check_args(argc, argv);
-	
+	init(&data);
 	data.mlx_ptr = mlx_init();
 	if (data.mlx_ptr == NULL)
 		return (1);
