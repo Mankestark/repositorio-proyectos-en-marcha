@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:12:27 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 09:46:32 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/09 10:49:44 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,20 @@ int	get_x_y(t_data *data, char **argv)
 	close(fd);
 	return (0);
 }
+
+int	get_map(t_data *data, char **argv)
+{
+	int	row;
+	ini	fd;
+
+	row = 0;
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+		error("Map not found");
+	while (ft_gnl(fd, &data->map.mtx[row]))
+		row++;
+	close(fd);
+	check_map(*data);
+	return (0);
+}
+

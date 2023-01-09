@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 02:48:58 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 09:10:06 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/09 10:49:24 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,17 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	check_args(argc, argv);
+	get_x_y(&data, argv);
 	init(&data);
-	data.mlx_ptr = mlx_init();
-	if (data.mlx_ptr == NULL)
-		return (1);
-	data.win_ptr = mlx_new_window(data.mlx_ptr, 800, 600, "primera");
-	if (data.win_ptr == NULL)
-	{
-		free(data.win_ptr);
-		return (1);
-	}
-	data.img.mlx_img = mlx_new_image(data.mlx_ptr, 800, 600);
-	data.img.addr = mlx_get_data_addr(data.img.mlx_img, &data.img.bpp,
-			&data.img.line_len, &data.img.endian);
+	get_map(&data, argv);
+	data.mlx = mlx_init();
+	if (data.mlx == NULL)
+		return(1);
+	data.mlx = mlx_new_window(data.mlx, data.map.size.x * SPRITE_W, data.map.size.y * SPRITE_H, "S_long");
+	if (data.win == NULL)
+		return(1);
+	
+	
 	mlx_loop_hook(data.mlx_ptr, &render, &data);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
 	mlx_loop(data.mlx_ptr);
