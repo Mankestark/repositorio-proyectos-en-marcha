@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:12:27 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 10:49:44 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/09 11:49:45 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,20 @@ int	get_map(t_data *data, char **argv)
 	return (0);
 }
 
+int	print_map(t_data data)
+{
+	int	row;
+	int	col;
+
+	row = 0;
+	while (row < data.map.size.y)
+	{
+		col = 0;
+		while (col < data.map.size.x)
+		{
+			load_map(data, row, col);
+			col++;
+		}
+	}
+	return (0);
+}
