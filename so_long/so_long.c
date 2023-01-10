@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 02:48:58 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 10:49:24 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 07:31:31 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ int	main(int argc, char **argv)
 	get_map(&data, argv);
 	data.mlx = mlx_init();
 	if (data.mlx == NULL)
-		return(1);
-	data.mlx = mlx_new_window(data.mlx, data.map.size.x * SPRITE_W, data.map.size.y * SPRITE_H, "S_long");
+		return (1);
+	data.mlx = mlx_new_window(data.mlx, data.map.size.x * SPRITE_W,
+			data.map.size.y * SPRITE_H, "S_long");
 	if (data.win == NULL)
-		return(1);
-	
-	
+		return (1);
+	get_init_position(&data);
+	count_collec(&data);
+	print_map(&var);
 	mlx_loop_hook(data.mlx_ptr, &render, &data);
 	mlx_hook(data.win_ptr, KeyPress, KeyPressMask, &handle_keypress, &data);
 	mlx_loop(data.mlx_ptr);
