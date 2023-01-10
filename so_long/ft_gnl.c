@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:33:28 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 09:35:53 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:25:15 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,11 @@ static char	*get_backup(char *backup)
 
 int	ft_gnl(int fd, char **line)
 {
-	static char	*backup[OPEN_MAX];
+	static char	*backup[FOPEN_MAX];
 	char		*buffer;
 	int			buffsize;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || line == 0 || fd > OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || line == 0 || fd > FOPEN_MAX)
 		return (-1);
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	buffsize = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:30:36 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/10 11:30:40 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:47:43 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,28 @@ int	check_args(int argc, char **argv)
 	{
 		error("Mapa invalido\n");
 		exit(EXIT_FAILURE);
+	}
+	return (0);
+}
+
+char	*ft_strstr(char *haystack, char *needle)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	if (needle[0] == '\0')
+		return (haystack);
+	while (haystack[i] != '\0')
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && haystack[i + j] != '\0')
+		{
+			if (needle[j + 1] == '\0')
+				return (&haystack[i]);
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }

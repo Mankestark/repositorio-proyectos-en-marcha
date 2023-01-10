@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movs.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 07:48:07 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/10 11:22:08 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:38:23 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	move_left(t_data *data)
 int	move_right(t_data *data)
 {
 	data->map.mtx[data->img.pos.y][data->img.pos.x] = '0';
-	data->img.pos.y += 1;
-	data->map.mtx[data->img.pos.y][data->img.pos] = 'P';
+	data->img.pos.x += 1;
+	data->map.mtx[data->img.pos.y][data->img.pos.x] = 'P';
 	data->game.count_steps++;
 	return (0);
 }
@@ -35,25 +35,25 @@ int	move_down(t_data *data)
 	data->map.mtx[data->img.pos.y][data->img.pos.x] = '0';
 	data->img.pos.y += 1;
 	data->map.mtx[data->img.pos.y][data->img.pos.x] = 'P';
-	data->game.count_collec++;
+	data->game.count_steps++;
 	return (0);
 }
 
-int	move_up(t_data *data);
+int	move_up(t_data *data)
 {
 	data->map.mtx[data->img.pos.y][data->img.pos.x] = '0';
 	data->img.pos.y -= 1;
 	data->map.mtx[data->img.pos.x][data->img.pos.x] = 'P';
-	data->game.count++;
+	data->game.count_steps++;
 	return (0);
 }
 
 int	movements(int key, t_data *data)
 {
-	if ((key == A_KEY) && (data->map.mtx[data->img.pos.y][data->img.pox.x
+	if ((key == A_KEY) && (data->map.mtx[data->img.pos.y][data->img.pos.x
 			- 1] == 'E'))
 		check_collect(data);
-	else if ((key == A_KEY) && (data->map.mtx[data->img.pos.y][data->img.pox.x
+	else if ((key == A_KEY) && (data->map.mtx[data->img.pos.y][data->img.pos.x
 			- 1] != '1'))
 		move_left(data);
 	if ((key == D_KEY) && (data->map.mtx[data->img.pos.y][data->img.pos.x
@@ -75,3 +75,4 @@ int	movements(int key, t_data *data)
 				- 1][data->img.pos.x] != '1'))
 		move_up(data);
 	return (0);
+}

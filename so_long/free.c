@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:10:52 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 11:43:15 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:21:44 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	free_map(t_data *data)
 	int	row;
 
 	row = 0;
-	mlx_destroy_window(data->mlx, var->win);
-	mlx_destroy_display(data->mlx)
+	mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_display(data->mlx);
 	free(data->mlx);
 	while (row < data->map.size.y)
 	{

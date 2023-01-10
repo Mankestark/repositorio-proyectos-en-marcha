@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maps.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:12:27 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 11:49:45 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:33:04 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	get_x_y(t_data *data, char **argv)
 int	get_map(t_data *data, char **argv)
 {
 	int	row;
-	ini	fd;
+	int	fd;
 
 	row = 0;
 	fd = open(argv[1], O_RDONLY);

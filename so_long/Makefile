@@ -4,7 +4,7 @@ CFLAGS	= -I $(MLX_DIR) -I $(LIBFT_PATH) -I $(SO_LONG_H)
 
 NAME	= so_long
 
-SRC	= so_long.c so_long_utils.c
+SRC	= so_long.c so_long_utils.c checks.c errors.c free.c ft_gnl.c init_game.c keys.c maps.c movs.c
 
 OBJ	= $(SRC:.c=.o)
 

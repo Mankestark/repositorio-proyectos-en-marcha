@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 07:34:47 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/10 07:44:28 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:32:06 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	mlx_close(t_data *data)
 
 int	key_press(int key, t_data *data)
 {
-	int	init_stps;
+	int	init_steps;
 
-	init_stps = data->game.count_steps;
+	init_steps = data->game.count_steps;
 	if (key == ESC)
 		free_exit(data, "Game closed\n");
 	else

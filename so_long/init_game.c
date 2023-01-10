@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
+/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:50:48 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/09 11:09:52 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/10 13:28:34 by mankestark       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	get_init_position(t_data *data)
 			if (data->map.mtx[row][col] == 'P')
 			{
 				data->img.pos.x = col;
-				data->imp.pos.y = row;
+				data->img.pos.y = row;
 			}
 			col++;
 		}
@@ -41,7 +41,7 @@ int	count_collec(t_data *data)
 	int	col;
 
 	row = 0;
-	var->game.count_collec = 0;
+	data->game.count_collec = 0;
 	while (row < data->map.size.y)
 	{
 		col = 0;
@@ -60,9 +60,9 @@ int	check_collect(t_data *data)
 {
 	if (count_collec(data) == 0)
 	{
-		free_exit(data, "e[34m\e[1mCONGRATS\n!!!! You WON !!!!\e[0m\n");
+		free_exit(data, "YOU WON\n");
 	}
 	else
-		ft_printf("e[35m\e[1mPlease, collect all diamonds!!!\e[0m\n");
+		ft_printf("COLLECT ALL POKEMON BALLS\n");
 	return (0);
 }
