@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:17:02 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/11 07:31:57 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/11 10:48:46 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct s_pos
 
 typedef struct s_img
 {
-	void	*imp_ptr;
+	void	*img_ptr;
 	t_pos	size;
 	t_pos	pos;
 	int		*addr;

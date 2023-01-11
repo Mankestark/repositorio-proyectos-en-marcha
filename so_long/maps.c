@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:12:27 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/11 07:31:05 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/11 11:11:11 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,21 @@ int	get_map(t_data *data, char **argv)
 int	load_map(t_data data, int row, int col)
 {
 	if (data.map.mtx[row][col] == '1')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/tree.xpm",
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./images/arbol.xpm",
 				&data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == '0')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/floor.xpm",
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./images/suelo.xpm",
 				&data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == 'E')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/exit.xpm",
-				&data.img.size.x, &data.img.size.y);
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx,
+				"./images/1.xpm", &data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == 'C')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/collec.xpm",
-				&data.img.size.x, &data.img.size.y);
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx,
+				"./images/ball.xpm", &data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == 'P')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, data.img.spt_path,
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx,
+				"./images/pikachu.xmp",
 				&data.img.size.x, &data.img.size.y);
-	else if (data.map.mtx[row][col] == 'Y' && data.has_enemy > 0)
-		enemy_animation(&data);
 	mlx_put_image_to_window(data.mlx, data.win, data.img.img_ptr, SPRITE_W
 		* col, SPRITE_H * row);
 	mlx_destroy_image(data.mlx, data.img.img_ptr);
