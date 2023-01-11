@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:17:02 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/10 13:32:41 by mankestark       ###   ########.fr       */
+/*   Updated: 2023/01/11 07:31:57 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int			init(t_data *data);
 void		*ft_strcpy_gnl(char *dst, char *src, size_t n);
 int			check_map(t_data data);
 int			error(char *msg);
+int			load_map(t_data data, int row, int col);
 int			get_x_y(t_data *data, char **argv);
 int			get_map(t_data *data, char **argv);
 int			print_map(t_data data);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maps.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:12:27 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/10 13:33:04 by mankestark       ###   ########.fr       */
+/*   Updated: 2023/01/11 07:31:05 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,31 @@ int	get_map(t_data *data, char **argv)
 		row++;
 	close(fd);
 	check_map(*data);
+	return (0);
+}
+
+int	load_map(t_data data, int row, int col)
+{
+	if (data.map.mtx[row][col] == '1')
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/tree.xpm",
+				&data.img.size.x, &data.img.size.y);
+	else if (data.map.mtx[row][col] == '0')
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/floor.xpm",
+				&data.img.size.x, &data.img.size.y);
+	else if (data.map.mtx[row][col] == 'E')
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/exit.xpm",
+				&data.img.size.x, &data.img.size.y);
+	else if (data.map.mtx[row][col] == 'C')
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./img/collec.xpm",
+				&data.img.size.x, &data.img.size.y);
+	else if (data.map.mtx[row][col] == 'P')
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, data.img.spt_path,
+				&data.img.size.x, &data.img.size.y);
+	else if (data.map.mtx[row][col] == 'Y' && data.has_enemy > 0)
+		enemy_animation(&data);
+	mlx_put_image_to_window(data.mlx, data.win, data.img.img_ptr, SPRITE_W
+		* col, SPRITE_H * row);
+	mlx_destroy_image(data.mlx, data.img.img_ptr);
 	return (0);
 }
 
