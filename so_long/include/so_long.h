@@ -13,6 +13,9 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# define BUFFER_SIZE	1024
+# define OPEN_MAX		255
+
 # include "../libft/libft.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
@@ -51,8 +54,7 @@
 
 # define SPRITE_H				64
 # define SPRITE_W				64
-# define BUFFER_SIZE	1024
-# define OPEN_MAX		255
+
 
 typedef struct s_pos
 {

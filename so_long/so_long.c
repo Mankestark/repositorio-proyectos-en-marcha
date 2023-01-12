@@ -35,12 +35,7 @@ int	main(int argc, char **argv)
 	init(&data);
 	get_map(&data, argv);
 	data.mlx = mlx_init();
-	if (data.mlx == NULL)
-		return (1);
-	data.mlx = mlx_new_window(data.mlx, data.map.size.x * SPRITE_W,
-			data.map.size.y * SPRITE_H, "S_long");
-	if (data.win == NULL)
-		return (1);
+	data.mlx = mlx_new_window(data.mlx, data.map.size.x * SPRITE_W,	data.map.size.y * SPRITE_H, "S_long");
 	get_init_position(&data);
 	count_collec(&data);
 	print_map(data);

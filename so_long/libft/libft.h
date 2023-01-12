@@ -13,6 +13,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFFER_SIZE	1024
+# define OPEN_MAX		255
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h>
@@ -22,6 +25,9 @@
 int				ft_isalnum(int c);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strstr(char *haystack, char *needle);
+int		ft_gnl(int fd, char **line);
+void	*ft_strcpy_gnl(char *dst, char *src, size_t n);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
