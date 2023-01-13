@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mankestark <mankestark@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:30:36 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/10 13:47:43 by mankestark       ###   ########.fr       */
+/*   Updated: 2023/01/13 07:33:06 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,6 @@ void	*ft_strcpy_gnl(char *dst, char *src, size_t n)
 	}
 	(dst)[i] = '\0';
 	return (dst);
-}
-
-int	check_args(int argc, char **argv)
-{
-	if (argc < 2)
-	{
-		error("Introduce el nombre del mapa como argumento\n\
- ./so_long map/map.ber\n");
-		exit(EXIT_FAILURE);
-	}
-	if (argc > 2)
-	{
-		error("Demasiados argumentos\n");
-		exit(EXIT_FAILURE);
-	}
-	if (ft_strstr(argv[1], ".ber") == NULL)
-	{
-		error("Mapa invalido\n");
-		exit(EXIT_FAILURE);
-	}
-	return (0);
 }
 
 char	*ft_strstr(char *haystack, char *needle)

@@ -6,7 +6,7 @@
 /*   By: mankestarkdev <mankestarkdev@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:12:27 by mankestarkd       #+#    #+#             */
-/*   Updated: 2023/01/11 11:11:11 by mankestarkd      ###   ########.fr       */
+/*   Updated: 2023/01/13 08:00:14 by mankestarkd      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_x_y(t_data *data, char **argv)
 	data->map.size.y = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		error("Map not found");
+		error("Mapa no encontrado");
 	while (ft_gnl(fd, &line))
 	{
 		data->map.size.x = ft_strlen(line);
@@ -42,7 +42,7 @@ int	get_map(t_data *data, char **argv)
 	row = 0;
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		error("Map not found");
+		error("Mapa no encontrado");
 	while (ft_gnl(fd, &data->map.mtx[row]))
 		row++;
 	close(fd);
@@ -59,15 +59,14 @@ int	load_map(t_data data, int row, int col)
 		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./images/suelo.xpm",
 				&data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == 'E')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx,
-				"./images/1.xpm", &data.img.size.x, &data.img.size.y);
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./images/1.xpm",
+				&data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == 'C')
-		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx,
-				"./images/ball.xpm", &data.img.size.x, &data.img.size.y);
+		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx, "./images/ball.xpm",
+				&data.img.size.x, &data.img.size.y);
 	else if (data.map.mtx[row][col] == 'P')
 		data.img.img_ptr = mlx_xpm_file_to_image(data.mlx,
-				"./images/pikachu.xmp",
-				&data.img.size.x, &data.img.size.y);
+				"./images/pikachu.xpm", &data.img.size.x, &data.img.size.y);
 	mlx_put_image_to_window(data.mlx, data.win, data.img.img_ptr, SPRITE_W
 		* col, SPRITE_H * row);
 	mlx_destroy_image(data.mlx, data.img.img_ptr);
@@ -88,6 +87,7 @@ int	print_map(t_data data)
 			load_map(data, row, col);
 			col++;
 		}
+		row++;
 	}
 	return (0);
 }
